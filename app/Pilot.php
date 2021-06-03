@@ -9,7 +9,7 @@ class Pilot extends Model
     protected $fillable = [
         
         'firstname',
-        'lasname',
+        'lastname',
         'nationality',
         'date_of_birth'
     ];

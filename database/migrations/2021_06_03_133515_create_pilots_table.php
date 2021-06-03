@@ -17,7 +17,7 @@ class CreatePilotsTable extends Migration
             $table -> id();
 
             $table -> string('firstname');
-            $table -> string('lasname');
+            $table -> string('lastname');
             $table -> string('nationality');
             $table -> string('date_of_birth');
 

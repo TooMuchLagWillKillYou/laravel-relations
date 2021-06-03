@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MyController@home') -> name('home');
+
+Route::get('/car/{id}', 'MyController@showCar') -> name('showCar');
+Route::get('/pilot/{id}', 'MyController@showPilot') -> name('showPilot');
+
+

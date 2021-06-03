@@ -26,9 +26,3 @@ class CarSeeder extends Seeder
         });
     }
 }
-
-        // factory(Pilot::class, 60) -> create() -> each(function($pilot){
-        //     $car = Car::inRandomOrder() -> limit(2) -> get();
-        //     $pilot -> cars() -> attach($car);
-        //     $pilot -> save();
-        // });
