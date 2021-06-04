@@ -30,4 +30,29 @@ class MyController extends Controller
 
         return view('pages.pilot', compact('pilot'));
     }
+
+    public function createCar(){
+
+        $brands = Brand::all();
+
+        return view('pages.create', compact('brands'));
+    }
+
+    public function storeCar(Request $request){
+
+        $valid = $request -> validate([
+
+            'name' => 'required|string|min:3',
+            'model' => 'required|string|min:3',
+            'kW' => 'required|integer|min:50|max:200'
+        ]);
+
+        $brand = Brand::findOrFail($request -> get('brand_id'));
+
+        $car = Car::make($valid);
+        $car -> brand() -> associate($brand);
+        $car -> save();
+
+        return redirect() -> route('home');
+    }
 }
