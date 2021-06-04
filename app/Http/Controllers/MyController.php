@@ -34,11 +34,14 @@ class MyController extends Controller
     public function createCar(){
 
         $brands = Brand::all();
+        $pilots = Pilot::all();
 
-        return view('pages.create', compact('brands'));
+        return view('pages.create', compact('brands', 'pilots'));
     }
 
     public function storeCar(Request $request){
+
+        // dd($request -> all());
 
         $valid = $request -> validate([
 
@@ -51,6 +54,8 @@ class MyController extends Controller
 
         $car = Car::make($valid);
         $car -> brand() -> associate($brand);
+        $car -> save();
+        $car -> pilots() -> attach($request -> get('pilot_id'));
         $car -> save();
 
         return redirect() -> route('home');
