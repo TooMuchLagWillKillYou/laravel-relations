@@ -18,6 +18,8 @@
             </a>
                     
         @endforeach
+        <br>
+        <a href="{{ route('home') }}" class="btn btn-primary mt-4">Back Home</a>
     </div>
 
 </main>

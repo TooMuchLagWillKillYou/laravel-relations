@@ -12,6 +12,8 @@
                 {{ ucfirst($car -> model) }}
             </p>
         @endforeach
+
+        <a href="{{ route('home') }}" class="btn btn-primary">Back Home</a>
     </div>
 
 </main>
