@@ -21,6 +21,6 @@ class Car extends Model
 
     public function pilots(){
 
-        return $this -> belongsToMany(Pilot::class);
+        return $this -> belongsToMany(Pilot::class)->withTimestamps();
     }
 }

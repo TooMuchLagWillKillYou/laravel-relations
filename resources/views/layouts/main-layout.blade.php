@@ -6,11 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>laravel-relations</title>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
 </head>
 <body>
-    @include('components.header')
-    @yield('main')
-    @include('components.footer')
+    <div class="container">
+        @include('components.header')
+        @yield('main')
+        @include('components.footer')
+    </div>
 </body>
 </html>

@@ -3,19 +3,22 @@
 @section('main')
 <main>
 
-    <h2>{{ ucfirst($car -> name) }} <span>{{ ucfirst($car -> model) }}</span></h2>
-    <p>{{ ucfirst($car -> brand -> name) }}</p>
-
-    @foreach ($car -> pilots as $pilot)
+    <div class="p-4 mt-4">
+        <h2>{{ ucfirst($car -> name) }} <span>{{ ucfirst($car -> model) }}</span></h2>
+        <p class="lead">{{ ucfirst($car -> brand -> name) }}</p>
     
-        <a href="{{route('showPilot', $pilot -> id)}}">
-            @if ($loop -> last)
-                {{ $pilot -> firstname }} {{ $pilot -> lastname }}
-            @else
-                {{ $pilot -> firstname }} {{ $pilot -> lastname }} - 
-            @endif
-        </a>
-                
-    @endforeach
+        @foreach ($car -> pilots as $pilot)
+        
+            <a href="{{route('showPilot', $pilot -> id)}}">
+                @if ($loop -> last)
+                    {{ $pilot -> firstname }} {{ $pilot -> lastname }}
+                @else
+                    {{ $pilot -> firstname }} {{ $pilot -> lastname }} - 
+                @endif
+            </a>
+                    
+        @endforeach
+    </div>
+
 </main>
 @endsection
